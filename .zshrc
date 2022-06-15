@@ -5,6 +5,7 @@ alias ll="ls -l"
 alias la="ls -a"
 alias lla="ls -al"
 alias dpf='docker ps --format "table {{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Status}}\t{{.Ports}}"'
+alias nv="nvim"
 
 # 環境変数
 export LANG=ja_JP.UTF-8
@@ -50,22 +51,24 @@ DIRSTACKSIZE=100
 setopt AUTO_PUSHD
 
 # git
-autoload -Uz vcs_info
-setopt prompt_subst
-zstyle ':vcs_info:git:*' check-for-changes true
-zstyle ':vcs_info:git:*' stagedstr "%F{magenta}!"
-zstyle ':vcs_info:git:*' unstagedstr "%F{yellow}+"
-zstyle ':vcs_info:*' formats "%F{cyan}%c%u[%b]%f"
-zstyle ':vcs_info:*' actionformats '[%b|%a]'
-precmd () { vcs_info }
+# autoload -Uz vcs_info
+# setopt prompt_subst
+# zstyle ':vcs_info:git:*' check-for-changes true
+# zstyle ':vcs_info:git:*' stagedstr "%F{magenta}!"
+# zstyle ':vcs_info:git:*' unstagedstr "%F{yellow}+"
+# zstyle ':vcs_info:*' formats "%F{cyan}%c%u[%b]%f"
+# zstyle ':vcs_info:*' actionformats '[%b|%a]'
+# precmd () { vcs_info }
 
 # プロンプトカスタマイズ
-PROMPT='
-[%B%F{red}%n@%m%f%b:%F{green}%~%f]%F{cyan}$vcs_info_msg_0_%f
-%F{yellow}$%f '
+#PROMPT='
+#[%B%F{red}%n@%m%f%b:%F{green}%~%f]%F{cyan}$vcs_info_msg_0_%f
+#%F{yellow}$%f '
 
 
 export PATH="/opt/homebrew/opt/php@8.0/bin:$PATH"
 export PATH="/opt/homebrew/opt/php@8.0/sbin:$PATH"
 
-exec fish
+# shellをfish shellに変更する
+#exec fish
+
