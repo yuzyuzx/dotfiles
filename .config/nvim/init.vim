@@ -86,3 +86,11 @@ nnoremap : ;
 ""inoremap : ;
 
 inoremap jj <Esc>
+
+call plug#begin('~/.local/share/nvim/plugged')
+Plug 'sainnhe/gruvbox-material'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'lambdalisue/fern.vim'
+call plug#end()
