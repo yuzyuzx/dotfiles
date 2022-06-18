@@ -93,4 +93,21 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'lambdalisue/fern.vim'
+Plug 'lambdalisue/fern-git-status.vim'
+Plug 'lambdalisue/nerdfont.vim'
+Plug 'lambdalisue/fern-renderer-nerdfont.vim'
+Plug 'lambdalisue/glyph-palette.vim'
 call plug#end()
+
+" Ctrl+nでファイルツリーを表示/非表示する
+nnoremap <C-n> :Fern . -reveal=% -drawer -toggle<CR>
+
+" fernアイコン有効化
+let g:fern#renderer = 'nerdfont'
+
+" fernアイコンに色を付ける
+augroup my-glyph-palette
+  autocmd! *
+  autocmd FileType fern call glyph_palette#apply()
+  autocmd FileType nerdtree,startify call glyph_palette#apply()
+augroup END
