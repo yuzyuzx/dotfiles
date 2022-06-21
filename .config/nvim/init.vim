@@ -44,7 +44,7 @@ syntax enable
 colorscheme gruvbox
 
 "現在カーソルからの相対行数を表示
-set relativenumber
+"set relativenumber
 
 
 " Tab系
@@ -79,8 +79,8 @@ nnoremap <Esc><Esc> :nohlsearch<CR>
 "inoremap ' ''<LEFT>
 
 " セミコロンとコロンを入れ替え（ノーマルモード）
-nnoremap ; :
-nnoremap : ;
+"nnoremap ; :
+"nnoremap : ;
 " セミコロンとコロンを入れ替え（インサートモード）
 ""inoremap ; :
 ""inoremap : ;
@@ -97,6 +97,7 @@ Plug 'lambdalisue/fern-git-status.vim'
 Plug 'lambdalisue/nerdfont.vim'
 Plug 'lambdalisue/fern-renderer-nerdfont.vim'
 Plug 'lambdalisue/glyph-palette.vim'
+Plug 'jiangmiao/auto-pairs'
 call plug#end()
 
 " Ctrl+nでファイルツリーを表示/非表示する
