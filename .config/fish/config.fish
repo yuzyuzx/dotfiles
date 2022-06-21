@@ -6,6 +6,8 @@
 #  bind \cw peco_select_history # Bind for prco history to Ctrl+r
 #end
 
+alias nv="nvim"
+
 # ----------
 # bobthefish config
 # ----------
@@ -16,4 +18,5 @@ set -g theme_color_scheme dracula
 set -g theme_display_date no  # 時刻を表示しないように設定
 set -g theme_display_cmd_duration no  # コマンド実行時間の非表示
 
-alias nv="nvim"
+# <C-d>によるログアウトを防止
+#bind \cd delete-char
