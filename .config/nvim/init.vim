@@ -98,6 +98,7 @@ Plug 'lambdalisue/nerdfont.vim'
 Plug 'lambdalisue/fern-renderer-nerdfont.vim'
 Plug 'lambdalisue/glyph-palette.vim'
 Plug 'jiangmiao/auto-pairs'
+Plug 'tpope/vim-surround'
 call plug#end()
 
 " Ctrl+nでファイルツリーを表示/非表示する
