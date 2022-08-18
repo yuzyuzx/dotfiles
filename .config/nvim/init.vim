@@ -13,7 +13,8 @@ set hidden
 set showcmd
 " ヤンクをクリップボードに保持する
 set clipboard+=unnamed
-
+" ヘルプの言語の優先順位
+set helplang=ja,en
 
 " 見た目系
 " 行番号を表示
@@ -37,11 +38,6 @@ set wildmode=list:longest
 " 折り返し時に表示行単位での移動できるようにする
 nnoremap j gj
 nnoremap k gk
-
-" シンタックスハイライトの有効化
-syntax enable
-"colorscheme darcula
-colorscheme gruvbox
 
 "現在カーソルからの相対行数を表示
 "set relativenumber
@@ -87,6 +83,8 @@ nnoremap <Esc><Esc> :nohlsearch<CR>
 
 inoremap jj <Esc>
 
+" plugin install
+" save -> source command -> :PlugInstall
 call plug#begin('~/.local/share/nvim/plugged')
 Plug 'sainnhe/gruvbox-material'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -99,13 +97,22 @@ Plug 'lambdalisue/fern-renderer-nerdfont.vim'
 Plug 'lambdalisue/glyph-palette.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-surround'
+Plug 'sonph/onehalf', { 'rtp': 'vim' }
+Plug 'tpope/vim-commentary'
+Plug 'vim-jp/vimdoc-ja'
 call plug#end()
+
+" シンタックスハイライトの有効化
+syntax enable
+"colorscheme darcula
+"colorscheme gruvbox
+colorscheme onehalfdark
 
 " Ctrl+nでファイルツリーを表示/非表示する
 nnoremap <C-n> :Fern . -reveal=% -drawer -toggle<CR>
 
 " fernアイコン有効化
-let g:fern#renderer = 'nerdfont'
+let g:fern#renderer='nerdfont'
 
 " fernアイコンに色を付ける
 augroup my-glyph-palette

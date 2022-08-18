@@ -68,6 +68,7 @@ setopt AUTO_PUSHD
 
 export PATH="/opt/homebrew/opt/php@8.0/bin:$PATH"
 export PATH="/opt/homebrew/opt/php@8.0/sbin:$PATH"
+export PATH="/Users/yuz/Library/Python/3.8/bin:$PATH"
 
 # shellをfish shellに変更する
 #exec fish
