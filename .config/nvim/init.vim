@@ -39,6 +39,9 @@ set wildmode=list:longest
 nnoremap j gj
 nnoremap k gk
 
+" 行を跨いだカーソル移動
+set whichwrap=b,s,h,l,<,>,[,],~
+
 "現在カーソルからの相対行数を表示
 "set relativenumber
 
@@ -49,9 +52,9 @@ set list listchars=tab:\▸\-
 " Tab文字を半角スペースにする
 set expandtab
 " 行頭以外のTab文字の表示幅（スペースいくつ分）
-set tabstop=4
+set tabstop=2
 " 行頭でのTab文字の表示幅
-set shiftwidth=4
+set shiftwidth=2
 
 
 " 検索系
@@ -81,6 +84,7 @@ nnoremap <Esc><Esc> :nohlsearch<CR>
 ""inoremap ; :
 ""inoremap : ;
 
+" jjでインサートモードを抜ける 
 inoremap jj <Esc>
 
 " plugin install

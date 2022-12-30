@@ -6,7 +6,7 @@
 #  bind \cw peco_select_history # Bind for prco history to Ctrl+r
 #end
 
-alias nv="nvim"
+alias vi="nvim"
 
 # ----------
 # bobthefish config
