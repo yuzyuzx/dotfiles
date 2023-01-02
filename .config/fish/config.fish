@@ -1,3 +1,11 @@
+export NVM_DIR="$HOME/.nvm"
+
+# This loads nvm
+[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"
+
+# This loads nvm bash_completion
+[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"
+
 # ----------
 # peco config
 # ----------
@@ -7,6 +15,8 @@
 #end
 
 alias vi="nvim"
+alias man='env LANG=C man'
+alias jman='env LANG=ja_JP.UTF-8 man'
 
 # ----------
 # bobthefish config

@@ -6,6 +6,8 @@ alias la="ls -a"
 alias lla="ls -al"
 alias dpf='docker ps --format "table {{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Status}}\t{{.Ports}}"'
 alias vi="nvim"
+alias man='env LANG=C man'
+alias jman='env LANG=ja_JP.UTF-8 man'
 
 # 環境変数
 export LANG=ja_JP.UTF-8
