@@ -1,0 +1,20 @@
+".CodeMirror.vim-mode.normal-mode textarea":
+  "s h": "core:focus-note-list-bar"
+  "s k": "editor:title:focus"
+'.CodeMirror.vim-mode.insert-mode textarea':
+  'j j': 'vim:exit-insert-mode'
+".sidebar-menu":
+  "s l": "core:focus-note-list-bar"
+  "j": "core:sidebar-select-next-item"
+  "k": "core:sidebar-select-prev-item"
+".sidebar-book-filter-menu":
+  "s l": "core:focus-note-list-bar"
+".note-list-bar":
+  "s l": "editor:focus"
+  "s h": "core:sidebar-focus"
+".mde-preview":
+  "s h": "core:focus-note-list-bar"
+  "s k": "editor:title:focus"
+  '/': 'preview-finder:open'
+  'n': 'preview-finder:next'
+  'N': 'preview-finder:prev'
