@@ -50,7 +50,7 @@
   editor:
     fontSize: 16
     showInvisibles: true
-    viewMode: "edit"
+    viewMode: "preview"
   "link-card":
     autolinks: false
   preview:
