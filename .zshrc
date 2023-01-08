@@ -23,46 +23,21 @@ alias view="nvim -R"
 alias man='env LANG=C man'
 alias jman='env LANG=ja_JP.UTF-8 man'
 
-# ヒストリの設定
-HISTFILE=~/.zsh_history
-HISTSIZE=50000
-SAVEHIST=50000
-
-# 直前のコマンドの重複を削除
+# 履歴ファイルの保存先
+HISTFILE=${HOME}/.zsh_history
+# メモリに保存される履歴の件数
+HISTSIZE=1000
+# 履歴ファイルに保存される履歴の件数
+SAVEHIST=100000
+# 重複を記録しない
 #setopt hist_ignore_dups
-
-# 同じコマンドをヒストリに残さない
-#setopt hist_ignore_all_dups
-
+# 実行時刻記録
+setopt extended_history
+# historyコマンドは履歴に登録しない
+setopt hist_no_store
 # 同時に起動したzshの間でヒストリを共有
-#setopt share_history
-
-# 補完機能を有効にする
-#autoload -Uz compinit
-#compinit -u
-#if [ -e /usr/local/share/zsh-completions ]; then
-#  fpath=(/usr/local/share/zsh-completions $fpath)
-#fi
-
-# 補完で小文字でも大文字にマッチさせる
-#zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
-
-# 補完候補を詰めて表示
-#setopt list_packed
-
-# 補完候補一覧をカラー表示
-#autoload colors
-#zstyle ':completion:*' list-colors ''
-
-# コマンドのスペルを訂正
-#setopt correct
-#
-# ビープ音を鳴らさない
-#setopt no_beep
-
-# ディレクトリスタック
-#DIRSTACKSIZE=100
-#setopt AUTO_PUSHD
+setopt share_history
+alias history='history -i -1000'
 
 ### Added by Zinit's installer
 if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
@@ -80,6 +55,9 @@ autoload -Uz _zinit
 
 zinit light zsh-users/zsh-autosuggestions
 zinit light zsh-users/zsh-syntax-highlighting
+zinit light agkozak/zsh-z
+#zinit light zsh-users/zsh-completions
+zinit light marlonrichert/zsh-autocomplete
 #zinit light romkatv/powerlevel10k
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
