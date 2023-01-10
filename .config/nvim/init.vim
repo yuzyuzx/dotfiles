@@ -108,9 +108,9 @@ call plug#end()
 
 " シンタックスハイライトの有効化
 syntax enable
-"colorscheme darcula
+colorscheme darcula
 "colorscheme gruvbox
-colorscheme onehalfdark
+"colorscheme onehalfdark
 
 " Ctrl+nでファイルツリーを表示/非表示する
 nnoremap <C-n> :Fern . -reveal=% -drawer -toggle<CR>

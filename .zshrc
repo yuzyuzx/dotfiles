@@ -1,3 +1,15 @@
+# プロファイリング機能
+#zmodload zsh/zprof
+
+# 起動計測コマンド
+#time zsh -i -c exit
+
+# PATH重複削除
+#typeset -U path PATH
+# 確認
+#echo $PATH | tr ':' '\n'
+
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -6,18 +18,17 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 export LANG=ja_JP.UTF-8
-export CLICOLOR=1
-export TERM=xterm-256color
-export PATH="/opt/homebrew/opt/php@8.0/bin:$PATH"
-export PATH="/opt/homebrew/opt/php@8.0/sbin:$PATH"
-export PATH="/Users/yuz/Library/Python/3.8/bin:$PATH"
+#export CLICOLOR=1
+#export TERM=xterm-256color
+#export PATH="/opt/homebrew/opt/php@8.0/bin:$PATH"
+#export PATH="/opt/homebrew/opt/php@8.0/sbin:$PATH"
+#export PATH="/Users/yuz/Library/Python/3.8/bin:$PATH"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+#[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-alias ll="ls -l"
-alias la="ls -a"
-alias lla="ls -al"
+alias ls="exa -a --icons"
+alias ll="exa -alghB --icons"
 alias vi="nvim"
 alias view="nvim -R"
 alias man='env LANG=C man'
@@ -38,6 +49,13 @@ setopt hist_no_store
 # 同時に起動したzshの間でヒストリを共有
 setopt share_history
 alias history='history -i -1000'
+
+# 補完機能設定
+# 補完機能有効化
+# https://gihyo.jp/dev/serial/01/zsh-book/0005
+autoload -U compinit && compinit
+# ファイル名補完
+zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Z}' '+m:{A-Z}={a-z}'
 
 ### Added by Zinit's installer
 if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
@@ -64,3 +82,6 @@ zinit light marlonrichert/zsh-autocomplete
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 eval "$(starship init zsh)"
+
+# プロファイリング機能
+#zprof
