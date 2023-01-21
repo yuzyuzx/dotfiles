@@ -76,12 +76,12 @@ zinit light zsh-users/zsh-syntax-highlighting
 zinit light agkozak/zsh-z
 #zinit light zsh-users/zsh-completions
 zinit light marlonrichert/zsh-autocomplete
-#zinit light romkatv/powerlevel10k
+zinit light romkatv/powerlevel10k
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-eval "$(starship init zsh)"
+#eval "$(starship init zsh)"
 
 # プロファイリング機能
 #zprof

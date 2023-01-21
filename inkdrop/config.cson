@@ -6,11 +6,11 @@
       "switch-notebook"
     ]
     lastNavigationState:
-      editingNoteId: "note:Wyxn8IV2v"
+      editingNoteId: "note:4GRoVkPe5"
       queryContext:
-        bookId: "book:yW1X20liN"
+        bookId: "book:1k6-PGeMh"
         filterKeyword: ""
-        includeChildren: true
+        includeChildren: false
         mode: "book"
       sidebar:
         workspace:
@@ -34,7 +34,7 @@
         w: 282
       size:
         h: 1415
-        w: 1406
+        w: 1706
     server:
       auth:
         password: "yuzInkdropx9"
@@ -50,7 +50,7 @@
   editor:
     fontSize: 16
     showInvisibles: true
-    viewMode: "preview"
+    viewMode: "edit"
   "link-card":
     autolinks: false
   preview:

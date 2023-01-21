@@ -3,6 +3,7 @@
   "s k": "editor:title:focus"
 '.CodeMirror.vim-mode.insert-mode textarea':
   'j j': 'vim:exit-insert-mode'
+  'ctrl-[': 'vim:exit-insert-mode'
 ".sidebar-menu":
   "s l": "core:focus-note-list-bar"
   "j": "core:sidebar-select-next-item"

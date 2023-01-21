@@ -1,16 +1,18 @@
 " setting
+" 標準エンコーディング
+set encoding=utf8
 "文字コードをUFT-8に設定
-set fenc=utf-8
+"set fenc=utf-8
 " バックアップファイルを作らない
-set nobackup
+"set nobackup
 " スワップファイルを作らない
-set noswapfile
+"set noswapfile
 " 編集中のファイルが変更されたら自動で読み直す
-set autoread
+"set autoread
 " バッファが編集中でもその他のファイルを開けるように
-set hidden
+"set hidden
 " 入力中のコマンドをステータスに表示する
-set showcmd
+"set showcmd
 " ヤンクをクリップボードに保持する
 set clipboard+=unnamed
 " ヘルプの言語の優先順位
@@ -21,20 +23,20 @@ set helplang=ja,en
 set number
 " 現在の行を強調表示
 set cursorline
-" 現在の行を強調表示（縦）
+" 現在の列を強調表示
 "set cursorcolumn
 " 行末の1文字先までカーソルを移動できるように
 set virtualedit=onemore
 " インデントはスマートインデント
 set smartindent
 " ビープ音を可視化
-set visualbell
+"set visualbell
 " 括弧入力時の対応する括弧を表示
 set showmatch
 " ステータスラインを常に表示
-set laststatus=2
+"set laststatus=2
 " コマンドラインの補完
-set wildmode=list:longest
+"set wildmode=list:longest
 " 折り返し時に表示行単位での移動できるようにする
 nnoremap j gj
 nnoremap k gk
@@ -71,19 +73,6 @@ set hlsearch
 " Escを2回押すとハイライトを消す
 nnoremap <Esc><Esc> :nohlsearch<CR>
 
-"inoremap { {}<LEFT>
-"inoremap [ []<LEFT>
-"inoremap ( ()<LEFT>
-"inoremap \" \"\"<LEFT>
-"inoremap ' ''<LEFT>
-
-" セミコロンとコロンを入れ替え（ノーマルモード）
-"nnoremap ; :
-"nnoremap : ;
-" セミコロンとコロンを入れ替え（インサートモード）
-""inoremap ; :
-""inoremap : ;
-
 " jjでインサートモードを抜ける 
 inoremap jj <Esc>
 
@@ -108,9 +97,15 @@ call plug#end()
 
 " シンタックスハイライトの有効化
 syntax enable
-colorscheme darcula
+"colorscheme darcula
 "colorscheme gruvbox
 "colorscheme onehalfdark
+colorscheme peachpuff
+
+" highlight変更
+"highlight CursorLine ctermfg=NONE
+highlight Visual ctermfg=black
+highlight Search ctermfg=black ctermbg=LightBlue
 
 " Ctrl+nでファイルツリーを表示/非表示する
 nnoremap <C-n> :Fern . -reveal=% -drawer -toggle<CR>
@@ -124,3 +119,9 @@ augroup my-glyph-palette
   autocmd FileType fern call glyph_palette#apply()
   autocmd FileType nerdtree,startify call glyph_palette#apply()
 augroup END
+
+let mapleader = "\<Space>"
+nnoremap <Leader>a ggVG
+
+" template
+let g:sonictemplate_vim_template_dir = '~/.config/nvim/template'
