@@ -13,9 +13,9 @@
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+#if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+#  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+#fi
 
 export LANG=ja_JP.UTF-8
 #export CLICOLOR=1
@@ -26,6 +26,11 @@ export LANG=ja_JP.UTF-8
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 #[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# bat command colortheme
+export BAT_THEME="TwoDark"
+
+fpath+=($HOME/.zsh/pure)
 
 alias ls="exa -a --icons"
 alias ll="exa -alghB --icons"
@@ -50,6 +55,10 @@ setopt hist_no_store
 setopt share_history
 alias history='history -i -1000'
 
+# prompt plugin 
+autoload -U promptinit; promptinit
+prompt pure
+
 # 補完機能設定
 # 補完機能有効化
 # https://gihyo.jp/dev/serial/01/zsh-book/0005
@@ -71,17 +80,24 @@ autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
 ### End of Zinit's installer chunk
 
+
+# pluginインストール
+# プラグイン削除方法
+  # 対象のプラグインを削除 or コメントアウト
+  # zsh再起動
+  # zinit delete --clean
 zinit light zsh-users/zsh-autosuggestions
 zinit light zsh-users/zsh-syntax-highlighting
 zinit light agkozak/zsh-z
-#zinit light zsh-users/zsh-completions
 zinit light marlonrichert/zsh-autocomplete
-zinit light romkatv/powerlevel10k
+#zinit light zsh-users/zsh-completions
+#zinit light romkatv/powerlevel10k
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+#[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 #eval "$(starship init zsh)"
+
 
 # プロファイリング機能
 #zprof

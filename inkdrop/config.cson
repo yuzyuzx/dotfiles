@@ -4,11 +4,12 @@
       machineId: "qYVKObA-C"
     disabledPackages: [
       "switch-notebook"
+      "code-fold"
     ]
     lastNavigationState:
-      editingNoteId: "note:4GRoVkPe5"
+      editingNoteId: "note:jaOg9-ADN"
       queryContext:
-        bookId: "book:1k6-PGeMh"
+        bookId: "book:AvwdLI0Qr"
         filterKeyword: ""
         includeChildren: false
         mode: "book"
@@ -20,21 +21,24 @@
       acrylicEnabled: true
       fullscreen: false
       hiddenComponents:
-        "sidebar-menu": []
-      maximized: false
+        "sidebar-menu": [
+          "SideBarMenuStatusList"
+          "SideBarMenuTagList"
+        ]
+      maximized: true
       noteListBar:
-        w: 318
+        w: 249
       position:
-        x: 0
+        x: 1229
         y: 25
       sideBar:
         collapsedBooks: [
           "book:UPNZrebjB"
         ]
-        w: 282
+        w: 241
       size:
         h: 1415
-        w: 1706
+        w: 1331
     server:
       auth:
         password: "yuzInkdropx9"
@@ -43,14 +47,14 @@
       enabled: true
       port: 19840
     themes: [
-      "monokai-dark-syntax"
-      "monokai-dark-ui"
-      "github-preview"
+      "nord-syntax"
+      "nord-preview"
+      "nord-ui"
     ]
   editor:
-    fontSize: 16
+    fontSize: 17
     showInvisibles: true
-    viewMode: "edit"
+    viewMode: "sideBySide"
   "link-card":
     autolinks: false
   preview:
