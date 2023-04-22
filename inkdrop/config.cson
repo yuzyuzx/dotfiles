@@ -7,9 +7,9 @@
       "code-fold"
     ]
     lastNavigationState:
-      editingNoteId: "note:jaOg9-ADN"
+      editingNoteId: "note:RICB61SVN"
       queryContext:
-        bookId: "book:AvwdLI0Qr"
+        bookId: "book:OLJZDjyAB"
         filterKeyword: ""
         includeChildren: false
         mode: "book"
@@ -22,23 +22,24 @@
       fullscreen: false
       hiddenComponents:
         "sidebar-menu": [
-          "SideBarMenuStatusList"
           "SideBarMenuTagList"
+          "SideBarMenuStatusList"
         ]
-      maximized: true
+      maximized: false
       noteListBar:
         w: 249
       position:
-        x: 1229
+        x: 0
         y: 25
       sideBar:
         collapsedBooks: [
           "book:UPNZrebjB"
         ]
+        visible: false
         w: 241
       size:
-        h: 1415
-        w: 1331
+        h: 1331
+        w: 1200
     server:
       auth:
         password: "yuzInkdropx9"
@@ -52,9 +53,9 @@
       "nord-ui"
     ]
   editor:
-    fontSize: 17
+    fontSize: 16
     showInvisibles: true
-    viewMode: "sideBySide"
+    viewMode: "edit"
   "link-card":
     autolinks: false
   preview:
