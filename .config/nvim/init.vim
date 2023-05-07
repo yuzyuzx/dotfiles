@@ -6,9 +6,10 @@ set showcmd
 set clipboard+=unnamed
 " ヘルプの言語の優先順位
 set helplang=ja,en
+" ウィンドウ端からのオフセット
 set scrolloff=3
 " 行番号を表示
-set number
+"set number
 " 現在の行を強調表示
 set cursorline
 " 行末の1文字先までカーソルを移動できるように
@@ -20,7 +21,7 @@ set showmatch
 " ステータスラインを常に表示
 set laststatus=2
 " 行を跨いだカーソル移動
-set whichwrap=b,s,h,l,<,>,[,],~
+set whichwrap=h,l
 "現在カーソルからの相対行数を表示
 "set relativenumber
 " 不可視文字を可視化(タブが「▸-」と表示される)
@@ -43,20 +44,31 @@ set incsearch
 set wrapscan
 " 検索語をハイライト表示
 set hlsearch
+" ESC反応速度
+set ttimeoutlen=100
+" 右端で折り返さない
+set nowrap
+" 水平スクロール刻み幅
+set sidescroll=0
+
+let mapleader = "\<Space>"
+nnoremap <Leader>a ggVG
+nnoremap <Leader>q :nohlsearch<CR>
+
 
 " 折り返し時に表示行単位での移動できるようにする
 nnoremap j gj
 nnoremap k gk
 " Escを2回押すとハイライトを消す
-nnoremap <Esc><Esc> :nohlsearch<CR>
+"nnoremap <Esc><Esc> :nohlsearch<CR>
 " jjでインサートモードを抜ける 
 inoremap jj <Esc>
 
 " plugin install
 " save -> source % -> :PlugInstall
 call plug#begin('~/.local/share/nvim/plugged')
-Plug 'sainnhe/gruvbox-material'
-Plug 'sonph/onehalf', { 'rtp': 'vim' }
+"Plug 'sainnhe/gruvbox-material'
+"Plug 'sonph/onehalf', { 'rtp': 'vim' }
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
@@ -73,6 +85,7 @@ Plug 'windwp/nvim-autopairs'
 Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'easymotion/vim-easymotion'
 call plug#end()
 
 lua << EOF
@@ -82,7 +95,7 @@ require("nvim-autopairs").setup {
 }
 EOF
 
-" colorscheme setting
+"colorscheme setting
 "syntax enable
 "colorscheme darcula
 "colorscheme gruvbox
@@ -103,13 +116,6 @@ colorscheme catppuccin-macchiato
 "  autocmd FileType fern call glyph_palette#apply()
 "  autocmd FileType nerdtree,startify call glyph_palette#apply()
 "augroup END
-
-let mapleader = "\<Space>"
-nnoremap <Leader>a ggVG
-nnoremap <Leader>k 5k
-nnoremap <Leader>j 5j
-nnoremap <Leader><Leader>k 15k
-nnoremap <Leader><Leader>j 15j
 
 " template
 let g:sonictemplate_vim_template_dir = '~/.config/nvim/template'
@@ -136,3 +142,7 @@ let g:airline#extensions#tabline#enabled = 1
 " https://github.com/vim-airline/vim-airline/wiki/Screenshots
 let g:airline_theme = 'violet'
 " ▲vim-airline setting
+
+" vim-easymotion setup
+map <Leader> <Plug>(easymotion-prefix)
+

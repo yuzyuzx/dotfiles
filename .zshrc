@@ -34,6 +34,7 @@ fpath+=($HOME/.zsh/pure)
 
 alias ls="exa -a --icons"
 alias ll="exa -alghB --icons"
+alias nv="nvim"
 alias vi="nvim"
 alias view="nvim -R"
 alias man='env LANG=C man'

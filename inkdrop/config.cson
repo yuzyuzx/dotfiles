@@ -3,13 +3,12 @@
     db:
       machineId: "qYVKObA-C"
     disabledPackages: [
-      "switch-notebook"
       "code-fold"
     ]
     lastNavigationState:
-      editingNoteId: "note:RICB61SVN"
+      editingNoteId: "note:BubbA0hj0"
       queryContext:
-        bookId: "book:OLJZDjyAB"
+        bookId: "book:LFuvrG5Dx"
         filterKeyword: ""
         includeChildren: false
         mode: "book"
@@ -25,7 +24,7 @@
           "SideBarMenuTagList"
           "SideBarMenuStatusList"
         ]
-      maximized: false
+      maximized: true
       noteListBar:
         w: 249
       position:
@@ -34,8 +33,8 @@
       sideBar:
         collapsedBooks: [
           "book:UPNZrebjB"
+          "book:EcKgixnSD"
         ]
-        visible: false
         w: 241
       size:
         h: 1331
@@ -48,17 +47,18 @@
       enabled: true
       port: 19840
     themes: [
-      "nord-syntax"
-      "nord-preview"
-      "nord-ui"
+      "github-preview"
+      "default-dark-ui"
+      "material-dark-mod-syntax"
     ]
   editor:
-    fontSize: 16
-    showInvisibles: true
+    fontSize: 15
+    lineNumbers: true
+    styleActiveLine: true
     viewMode: "edit"
   "link-card":
     autolinks: false
   preview:
-    fontSize: 17
+    fontSize: 18
   "switch-notebook":
     switchWithReturnKey: true
