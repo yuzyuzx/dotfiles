@@ -9,7 +9,7 @@ set helplang=ja,en
 " ウィンドウ端からのオフセット
 set scrolloff=3
 " 行番号を表示
-"set number
+set number
 " 現在の行を強調表示
 set cursorline
 " 行末の1文字先までカーソルを移動できるように
@@ -21,7 +21,7 @@ set showmatch
 " ステータスラインを常に表示
 set laststatus=2
 " 行を跨いだカーソル移動
-set whichwrap=h,l
+"set whichwrap=h,l
 "現在カーソルからの相対行数を表示
 "set relativenumber
 " 不可視文字を可視化(タブが「▸-」と表示される)
@@ -47,11 +47,16 @@ set hlsearch
 " ESC反応速度
 set ttimeoutlen=100
 " 右端で折り返さない
-set nowrap
+"set nowrap
 " 水平スクロール刻み幅
 set sidescroll=0
+" Shift+Kでキーワードのヘルプに移動する
+set keywordprg=:help
 
-let mapleader = "\<Space>"
+" 折返しの目印
+set showbreak=↪
+
+let mapleader = ","
 nnoremap <Leader>a ggVG
 nnoremap <Leader>q :nohlsearch<CR>
 
@@ -61,8 +66,28 @@ nnoremap j gj
 nnoremap k gk
 " Escを2回押すとハイライトを消す
 "nnoremap <Esc><Esc> :nohlsearch<CR>
-" jjでインサートモードを抜ける 
-inoremap jj <Esc>
+" jjでインサートモードを抜ける
+"inoremap jj <Esc>
+
+nnoremap <Space>j 5j
+nnoremap <Space><Space>j 10j
+nnoremap <Space>k 5k
+nnoremap <Space><Space>k 10k
+
+" insert modeでのカーソル移動
+" macに合わせている
+imap <C-p> <Up>
+imap <C-n> <Down>
+imap <C-b> <Left>
+imap <C-f> <Right>
+
+" Terminal動作
+" インサートモードからの離脱
+tnoremap <C-[> <C-\><C-n>
+" Tコマンドで Terminal を開くと現在のウィンドウの下部に別ウィンドウで表示されるようにする
+command! -nargs=* T split | wincmd j | resize 20 | terminal <args>
+" デフォルトでインサートモードにする
+autocmd TermOpen * startinsert
 
 " plugin install
 " save -> source % -> :PlugInstall
@@ -128,19 +153,22 @@ let g:sonictemplate_vim_template_dir = '~/.config/nvim/template'
 inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 " 背景透明
-highlight Normal      ctermbg=NONE guibg=NONE
-highlight NonText     ctermbg=NONE guibg=NONE
-highlight LineNr      ctermbg=NONE guibg=NONE
-highlight Folded      ctermbg=NONE guibg=NONE
-highlight EndOfBuffer ctermbg=NONE guibg=NONE
+"highlight Normal      ctermbg=NONE guibg=NONE
+"highlight NonText     ctermbg=NONE guibg=NONE
+"highlight LineNr      ctermbg=NONE guibg=NONE
+"highlight Folded      ctermbg=NONE guibg=NONE
+"highlight EndOfBuffer ctermbg=NONE guibg=NONE
 
 " ▼vim-airline setting
-let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#enabled = 1
-"let g:airline#extensions#tabline#buffer_idx_mode = 1
-"let g:airline#extensions#whitespace#mixed_indent_algo = 1
-" https://github.com/vim-airline/vim-airline/wiki/Screenshots
 let g:airline_theme = 'violet'
+let g:arrline_violet_bg = 'dark'
+" let g:airline_theme = 'deus'
+" let g:airline_deus_bg = 'dark'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#branch#enabled = 0
+" trailing表示（末尾空白チェック）をオフにする
+"let g:airline#extensions#whitespace#enabled = 0
 " ▲vim-airline setting
 
 " vim-easymotion setup

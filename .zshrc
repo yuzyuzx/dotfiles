@@ -24,21 +24,20 @@ export LANG=ja_JP.UTF-8
 #export PATH="/opt/homebrew/opt/php@8.0/sbin:$PATH"
 #export PATH="/Users/yuz/Library/Python/3.8/bin:$PATH"
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+#[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 #[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # bat command colortheme
-export BAT_THEME="TwoDark"
-
+#export BAT_THEME="TwoDark"
 fpath+=($HOME/.zsh/pure)
 
-alias ls="exa -a --icons"
+alias ls="exa -aF --icons"
 alias ll="exa -alghB --icons"
 alias nv="nvim"
-alias vi="nvim"
 alias view="nvim -R"
 alias man='env LANG=C man'
 alias jman='env LANG=ja_JP.UTF-8 man'
+alias history='history -i -1000'
 
 # 履歴ファイルの保存先
 HISTFILE=${HOME}/.zsh_history
@@ -54,7 +53,10 @@ setopt extended_history
 setopt hist_no_store
 # 同時に起動したzshの間でヒストリを共有
 setopt share_history
-alias history='history -i -1000'
+# Ctrl + Dでログアウトを防ぐ
+setopt IGNOREEOF
+# リダイレクトの上書きをエラーにする
+setopt noclobber
 
 # prompt plugin 
 autoload -U promptinit; promptinit
@@ -98,7 +100,6 @@ zinit light marlonrichert/zsh-autocomplete
 #[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 #eval "$(starship init zsh)"
-
 
 # プロファイリング機能
 #zprof
