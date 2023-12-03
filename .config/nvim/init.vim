@@ -16,9 +16,7 @@ set cursorline
 set virtualedit=onemore
 " インデントはスマートインデント
 set smartindent
-" 括弧入力時の対応する括弧を表示
-set showmatch
-" ステータスラインを常に表示
+" 括弧入力時の対応する括弧を表示 set showmatch ステータスラインを常に表示
 set laststatus=2
 " 行を跨いだカーソル移動
 "set whichwrap=h,l
@@ -113,21 +111,20 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'easymotion/vim-easymotion'
 call plug#end()
 
-lua << EOF
-require("nvim-autopairs").setup {
-  -- Map the <C-h> key to delete a pair
-  map_c_h = true
-}
-EOF
-
 "colorscheme setting
 "syntax enable
 "colorscheme darcula
 "colorscheme gruvbox
 "colorscheme onehalfdark
 "catppuccin-latte, catppuccin-frappe, catppuccin-macchiato, catppuccin-mocha
-colorscheme catppuccin-macchiato
+colorscheme catppuccin-latte
 
+lua << EOF
+require("nvim-autopairs").setup {
+  -- Map the <C-h> key to delete a pair
+  map_c_h = true
+}
+EOF
 
 " Ctrl+nでファイルツリーを表示/非表示する
 "nnoremap <C-n> :Fern . -reveal=% -drawer -toggle<CR>
@@ -160,13 +157,10 @@ inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR
 "highlight EndOfBuffer ctermbg=NONE guibg=NONE
 
 " ▼vim-airline setting
-let g:airline_theme = 'violet'
-let g:arrline_violet_bg = 'dark'
-" let g:airline_theme = 'deus'
-" let g:airline_deus_bg = 'dark'
-let g:airline#extensions#tabline#enabled = 1
-let g:airline_powerline_fonts = 1
-let g:airline#extensions#branch#enabled = 0
+ let g:airline_theme = 'base16'
+ let g:airline#extensions#tabline#enabled = 1
+ let g:airline_powerline_fonts = 1
+ let g:airline#extensions#branch#enabled = 0
 " trailing表示（末尾空白チェック）をオフにする
 "let g:airline#extensions#whitespace#enabled = 0
 " ▲vim-airline setting
