@@ -64,13 +64,18 @@ nnoremap j gj
 nnoremap k gk
 " Escを2回押すとハイライトを消す
 "nnoremap <Esc><Esc> :nohlsearch<CR>
-" jjでインサートモードを抜ける
-"inoremap jj <Esc>
 
-nnoremap <Space>j 5j
-nnoremap <Space><Space>j 10j
-nnoremap <Space>k 5k
-nnoremap <Space><Space>k 10k
+" 前後移動
+nnoremap <Space>j 10j
+nnoremap <Space><Space>j 20j
+nnoremap <Space>k 10k
+nnoremap <Space><Space>k 20k
+
+" split間の移動
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
 
 " insert modeでのカーソル移動
 " macに合わせている
@@ -87,20 +92,13 @@ command! -nargs=* T split | wincmd j | resize 20 | terminal <args>
 " デフォルトでインサートモードにする
 autocmd TermOpen * startinsert
 
-" plugin install
+" plugin manager
+" https://github.com/junegunn/vim-plug
 " save -> source % -> :PlugInstall
 call plug#begin('~/.local/share/nvim/plugged')
-"Plug 'sainnhe/gruvbox-material'
-"Plug 'sonph/onehalf', { 'rtp': 'vim' }
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-"Plug 'lambdalisue/fern.vim'
-"Plug 'lambdalisue/fern-git-status.vim'
-"Plug 'lambdalisue/nerdfont.vim'
-"Plug 'lambdalisue/fern-renderer-nerdfont.vim'
-"Plug 'lambdalisue/glyph-palette.vim'
-"Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'vim-jp/vimdoc-ja'
@@ -108,36 +106,11 @@ Plug 'windwp/nvim-autopairs'
 Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'easymotion/vim-easymotion'
 call plug#end()
 
-"colorscheme setting
-"syntax enable
-"colorscheme darcula
-"colorscheme gruvbox
-"colorscheme onehalfdark
+"colorscheme
 "catppuccin-latte, catppuccin-frappe, catppuccin-macchiato, catppuccin-mocha
 colorscheme catppuccin-latte
-
-lua << EOF
-require("nvim-autopairs").setup {
-  -- Map the <C-h> key to delete a pair
-  map_c_h = true
-}
-EOF
-
-" Ctrl+nでファイルツリーを表示/非表示する
-"nnoremap <C-n> :Fern . -reveal=% -drawer -toggle<CR>
-
-" fernアイコン有効化
-"let g:fern#renderer='nerdfont'
-
-" fernアイコンに色を付ける
-"augroup my-glyph-palette
-"  autocmd! *
-"  autocmd FileType fern call glyph_palette#apply()
-"  autocmd FileType nerdtree,startify call glyph_palette#apply()
-"augroup END
 
 " template
 let g:sonictemplate_vim_template_dir = '~/.config/nvim/template'
@@ -146,15 +119,7 @@ let g:sonictemplate_vim_template_dir = '~/.config/nvim/template'
 " 起動は```: CocStart```
 "let g:coc_start_at_startup = v:false
 
-
 inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
-
-" 背景透明
-"highlight Normal      ctermbg=NONE guibg=NONE
-"highlight NonText     ctermbg=NONE guibg=NONE
-"highlight LineNr      ctermbg=NONE guibg=NONE
-"highlight Folded      ctermbg=NONE guibg=NONE
-"highlight EndOfBuffer ctermbg=NONE guibg=NONE
 
 " ▼vim-airline setting
  let g:airline_theme = 'base16'
@@ -165,6 +130,9 @@ inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR
 "let g:airline#extensions#whitespace#enabled = 0
 " ▲vim-airline setting
 
-" vim-easymotion setup
-map <Leader> <Plug>(easymotion-prefix)
-
+lua << EOF
+require("nvim-autopairs").setup {
+  -- Map the <C-h> key to delete a pair
+  map_c_h = true
+}
+EOF
