@@ -109,6 +109,7 @@ Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
 "colorscheme
+"set termguicolors
 "catppuccin-latte, catppuccin-frappe, catppuccin-macchiato, catppuccin-mocha
 colorscheme catppuccin-latte
 
