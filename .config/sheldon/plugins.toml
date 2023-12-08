@@ -18,3 +18,37 @@ shell = "zsh"
 #
 # [plugins.base16]
 # github = "chriskempson/base16-shell"
+
+[plugins.zsh-defer]
+github = "romkatv/zsh-defer"
+
+[templates]
+defer = "{{ hooks?.pre | nl }}{% for file in files %}zsh-defer source \"{{ file }}\"\n{% endfor %}{{ hooks?.post | nl }}"
+
+[plugins.zsh-syntax-highlighting]
+github = "zsh-users/zsh-syntax-highlighting"
+apply = ["defer"]
+
+[plugins.zsh-autocomplete]
+github = "marlonrichert/zsh-autocomplete"
+apply = ["defer"]
+
+[plugins.zsh-autosuggestions]
+github = "zsh-users/zsh-autosuggestions"
+apply = ["defer"]
+
+[plugins."z.lua"]
+github = "skywind3000/z.lua"
+apply = ["defer"]
+
+[plugins.enhancd]
+github = "b4b4r07/enhancd"
+apply = ["defer"]
+
+[plugins.starship]
+inline = 'eval "$(starship init zsh)"'
+
+[plugins.catppuccin]
+# zsh-syntax-highlighting theme
+# https://github.com/catppuccin/zsh-syntax-highlighting
+inline = 'source ~/.zsh/catppuccin_latte-zsh-syntax-highlighting.zsh'

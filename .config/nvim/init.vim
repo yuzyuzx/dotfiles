@@ -18,15 +18,8 @@ set virtualedit=onemore
 set smartindent
 " 括弧入力時の対応する括弧を表示 set showmatch ステータスラインを常に表示
 set laststatus=2
-" 行を跨いだカーソル移動
-"set whichwrap=h,l
-"現在カーソルからの相対行数を表示
-"set relativenumber
-" 不可視文字を可視化(タブが「▸-」と表示される)
-"set list listchars=tab:\▸\-
 set list
-set listchars=tab:>-
-" Tab文字を半角スペースにする
+set listchars=tab:>- " Tab文字を半角スペースにする
 set expandtab
 " 行頭以外のTab文字の表示幅（スペースいくつ分）
 set tabstop=2
@@ -58,12 +51,9 @@ let mapleader = ","
 nnoremap <Leader>a ggVG
 nnoremap <Leader>q :nohlsearch<CR>
 
-
 " 折り返し時に表示行単位での移動できるようにする
 nnoremap j gj
 nnoremap k gk
-" Escを2回押すとハイライトを消す
-"nnoremap <Esc><Esc> :nohlsearch<CR>
 
 " 前後移動
 nnoremap <Space>j 10j
@@ -84,14 +74,6 @@ imap <C-n> <Down>
 imap <C-b> <Left>
 imap <C-f> <Right>
 
-" Terminal動作
-" インサートモードからの離脱
-tnoremap <C-[> <C-\><C-n>
-" Tコマンドで Terminal を開くと現在のウィンドウの下部に別ウィンドウで表示されるようにする
-command! -nargs=* T split | wincmd j | resize 20 | terminal <args>
-" デフォルトでインサートモードにする
-autocmd TermOpen * startinsert
-
 " plugin manager
 " https://github.com/junegunn/vim-plug
 " save -> source % -> :PlugInstall
@@ -104,36 +86,26 @@ Plug 'tpope/vim-commentary'
 Plug 'vim-jp/vimdoc-ja'
 Plug 'windwp/nvim-autopairs'
 Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+Plug 'nvim-lualine/lualine.nvim'
+Plug 'nvim-tree/nvim-web-devicons'
 call plug#end()
 
 "colorscheme
-"set termguicolors
 "catppuccin-latte, catppuccin-frappe, catppuccin-macchiato, catppuccin-mocha
 colorscheme catppuccin-latte
 
 " template
 let g:sonictemplate_vim_template_dir = '~/.config/nvim/template'
 
-" Coc.vimをdisableモードで起動
-" 起動は```: CocStart```
-"let g:coc_start_at_startup = v:false
-
 inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
-" ▼vim-airline setting
- let g:airline_theme = 'base16'
- let g:airline#extensions#tabline#enabled = 1
- let g:airline_powerline_fonts = 1
- let g:airline#extensions#branch#enabled = 0
-" trailing表示（末尾空白チェック）をオフにする
-"let g:airline#extensions#whitespace#enabled = 0
-" ▲vim-airline setting
-
 lua << EOF
-require("nvim-autopairs").setup {
-  -- Map the <C-h> key to delete a pair
-  map_c_h = true
+require('lualine').setup {
+  options = {
+    component_separators = { left = '|', right = '|'},
+    section_separators = { left = '', right = ''},
+    theme = "catppuccin"
+  }
 }
 EOF
+

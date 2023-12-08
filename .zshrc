@@ -1,10 +1,9 @@
 export LANG=ja_JP.UTF-8
 export CLICOLOR=1
-#export TERM=xterm-256color
-#export PATH="/opt/homebrew/opt/php@8.0/bin:$PATH"
-#export PATH="/opt/homebrew/opt/php@8.0/sbin:$PATH"
-#export PATH="/Users/yuz/Library/Python/3.8/bin:$PATH"
 export NVM_DIR="$HOME/.nvm"
+
+# batコマンドのtheme
+export BAT_THEME="Catppuccin-latte"
 
 #alias ls="exa -aF --icons"
 #alias ll="exa -alghB --icons"
@@ -35,3 +34,4 @@ setopt IGNOREEOF
 # リダイレクトの上書きをエラーにする
 setopt noclobber
 
+eval "$(sheldon source)"
