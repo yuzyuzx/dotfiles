@@ -4,7 +4,7 @@ palette = "catppuccin_latte"
 
 [character]
 # Note the use of Catppuccin color 'maroon'
-success_symbol = "[[♥](green) ❯](maroon)"
+success_symbol = "[[♥](pink) ❯](maroon)"
 error_symbol = "[❯](red)"
 vimcmd_symbol = "[❮](green)"
 
@@ -12,6 +12,9 @@ vimcmd_symbol = "[❮](green)"
 truncation_length = 4
 # Catppuccin 'lavender'
 style = "bold lavender"
+
+[nodejs]
+disabled = true
 
 # palette tables should be last in the config ⚓️
 [palettes.catppuccin_macchiato]
