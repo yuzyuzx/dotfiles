@@ -84,7 +84,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'vim-jp/vimdoc-ja'
-Plug 'windwp/nvim-autopairs'
+"Plug 'windwp/nvim-autopairs'
 Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'nvim-tree/nvim-web-devicons'
@@ -97,7 +97,7 @@ colorscheme catppuccin-latte
 " template
 let g:sonictemplate_vim_template_dir = '~/.config/nvim/template'
 
-inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 lua << EOF
 require('lualine').setup {
