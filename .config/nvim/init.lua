@@ -1,25 +1,28 @@
-vim.o.encoding = 'utf-8'
-vim.o.fileencoding = 'utf-8'
-vim.o.helplang = "ja,en"
-vim.o.number = true
-vim.o.cursorline = true
-vim.o.virtualedit = 'onemore'
-vim.o.expandtab = true
-vim.o.tabstop = 2
-vim.o.shiftwidth = 2
-vim.o.list = true
-vim.o.incsearch = true
-vim.o.ignorecase = true
-vim.o.smartcase = true
-vim.o.wrapscan = true
-vim.o.hlsearch = true
-vim.o.showbreak = "↪"
-vim.o.keywordprg = ":help"
-vim.o.scrolloff = 3
-
+vim.opt.encoding = 'utf-8'
+vim.opt.fileencoding = 'utf-8'
+vim.opt.helplang = 'ja', 'en'
+vim.opt.number = true
+vim.opt.cursorline = true
+vim.opt.virtualedit = 'onemore'
+vim.opt.expandtab = true
+vim.opt.tabstop = 2
+vim.opt.shiftwidth = 2
+vim.opt.list = true
 vim.opt.listchars = { tab = '▸ ', trail = '·' }
+vim.opt.incsearch = true
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+vim.opt.wrapscan = true
+vim.opt.hlsearch = true
+vim.opt.showbreak = "↪"
+vim.opt.keywordprg = ":help"
+vim.opt.scrolloff = 3
 vim.opt.clipboard:append{'unnamed'}
 
+vim.g.mapleader = ','
+
+vim.keymap.set('n', '<Leader>a', 'ggVG')
+vim.keymap.set('n', '<Leader>q', ':nohlsearch<CR>')
 vim.keymap.set('n', 'j', 'gj')
 vim.keymap.set('n', 'k', 'gk')
 vim.keymap.set('n', '<Space>j', '10j')
