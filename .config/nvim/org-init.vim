@@ -1,51 +1,68 @@
 " 標準エンコーディング
-set encoding=utf8
+"set encoding=utf8
+
 " 入力中のコマンドをステータスに表示する
-set showcmd
+"?set showcmd
+
 " ヤンクをクリップボードに保持する
-set clipboard+=unnamed
+"set clipboard+=unnamed
+
 " ヘルプの言語の優先順位
-set helplang=ja,en
+"set helplang=ja,en
+
 " ウィンドウ端からのオフセット
-set scrolloff=3
+"set scrolloff=3
+
 " 行番号を表示
-set number
+"set number
+
 " 現在の行を強調表示
-set cursorline
+"set cursorline
+
 " 行末の1文字先までカーソルを移動できるように
-set virtualedit=onemore
+"set virtualedit=onemore
+
 " インデントはスマートインデント
-set smartindent
+"?set smartindent
+
 " 括弧入力時の対応する括弧を表示 set showmatch ステータスラインを常に表示
-set laststatus=2
-set list
-set listchars=tab:>- " Tab文字を半角スペースにする
-set expandtab
+"?set laststatus=2
+
+"set list
+"set listchars=tab:>- " Tab文字を半角スペースにする
+
+"set expandtab
 " 行頭以外のTab文字の表示幅（スペースいくつ分）
-set tabstop=2
+"set tabstop=2
+
 " 行頭でのTab文字の表示幅
-set shiftwidth=2
+"set shiftwidth=2
+
 " 検索文字列が小文字の場合は大文字小文字を区別なく検索する
-set ignorecase
+"set ignorecase
 " 検索文字列に大文字が含まれている場合は区別して検索する
-set smartcase
+"set smartcase
 " 検索文字列入力時に順次対象文字列にヒットさせる
-set incsearch
+"set incsearch
 " 検索時に最後まで行ったら最初に戻る
-set wrapscan
+"set wrapscan
 " 検索語をハイライト表示
-set hlsearch
+"set hlsearch
+
 " ESC反応速度
-set ttimeoutlen=100
+"?set ttimeoutlen=100
+
 " 右端で折り返さない
-"set nowrap
+"?set nowrap
+
 " 水平スクロール刻み幅
-set sidescroll=0
+"?set sidescroll=0
+
 " Shift+Kでキーワードのヘルプに移動する
-set keywordprg=:help
+"set keywordprg=:help
 
 " 折返しの目印
-set showbreak=↪
+"set showbreak=↪
 
 let mapleader = ","
 nnoremap <Leader>a ggVG
