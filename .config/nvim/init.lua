@@ -37,3 +37,39 @@ vim.keymap.set('i', '<C-p>', '<Up>')
 vim.keymap.set('i', '<C-n>', '<Down>')
 vim.keymap.set('i', '<C-b>', '<Left>')
 vim.keymap.set('i', '<C-f>', '<Right>')
+
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
+end
+
+vim.opt.rtp:prepend(lazypath)
+
+-- treesitter
+-- nvim-ts-autotag
+require("lazy").setup({
+  { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+  'vim-jp/vimdoc-ja',
+  'nvim-lualine/lualine.nvim',
+  { 'windwp/nvim-autopairs', event = "InsertEnter", opts = {} },
+  { "nvim-tree/nvim-web-devicons", lazy = true },
+})
+
+
+require('lualine').setup {
+  options = {
+    component_separators = { left = '|', right = '|'},
+    section_separators = { left = '', right = ''},
+    theme = "catppuccin"
+  }
+}
+
+-- catppuccin-latte, catppuccin-frappe, catppuccin-macchiato, catppuccin-mocha
+vim.cmd.colorscheme "catppuccin-latte"
