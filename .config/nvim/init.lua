@@ -52,17 +52,27 @@ end
 
 vim.opt.rtp:prepend(lazypath)
 
--- treesitter
--- nvim-ts-autotag
 require("lazy").setup({
   { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
-  'vim-jp/vimdoc-ja',
-  'nvim-lualine/lualine.nvim',
   { 'windwp/nvim-autopairs', event = "InsertEnter", opts = {} },
   { "nvim-tree/nvim-web-devicons", lazy = true },
+  { 'numToStr/Comment.nvim', opts = {}, lazy = false, },
+  { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
+  'vim-jp/vimdoc-ja',
+  'nvim-lualine/lualine.nvim',
+  -- 'windwp/nvim-ts-autotag',
 })
 
+require("nvim-treesitter.configs").setup {
+  -- treesitterのthemeをcatppuccinに設定
+  -- https://github.com/catppuccin/nvim?tab=readme-ov-file#wrong-treesitter-highlights
+  highlight = {
+      enable = true,
+      additional_vim_regex_highlighting = false
+  },
+}
 
+-- status line
 require('lualine').setup {
   options = {
     component_separators = { left = '|', right = '|'},
@@ -71,5 +81,11 @@ require('lualine').setup {
   }
 }
 
--- catppuccin-latte, catppuccin-frappe, catppuccin-macchiato, catppuccin-mocha
+-- colorscheme
+--[[
+catppuccin-latte
+catppuccin-frappe
+catppuccin-macchiato
+catppuccin-mocha
+]]
 vim.cmd.colorscheme "catppuccin-latte"
