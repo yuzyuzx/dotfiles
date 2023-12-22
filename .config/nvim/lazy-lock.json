@@ -4,7 +4,7 @@
   "lazy.nvim": { "branch": "main", "commit": "96584866b9c5e998cbae300594d0ccfd0c464627" },
   "lualine.nvim": { "branch": "master", "commit": "2248ef254d0a1488a72041cfb45ca9caada6d994" },
   "nvim-autopairs": { "branch": "master", "commit": "9fd41181693dd4106b3e414a822bb6569924de81" },
-  "nvim-treesitter": { "branch": "master", "commit": "d496c5e08e853dadedc7f5d0a6541288d0441fd3" },
+  "nvim-treesitter": { "branch": "master", "commit": "d5842ebca8e0f048a5c2de6f467a8f22fa2187ed" },
   "nvim-web-devicons": { "branch": "master", "commit": "aff5f50b34754335a312c9b3dc5b245f605ce437" },
   "vimdoc-ja": { "branch": "master", "commit": "2f02f671a12e2a6e1a3813c2fc7a03dcce313825" }
 }
