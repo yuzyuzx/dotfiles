@@ -18,6 +18,8 @@ vim.opt.showbreak = "↪"
 vim.opt.keywordprg = ":help"
 vim.opt.scrolloff = 3
 vim.opt.clipboard:append{'unnamed'}
+-- bufferline
+-- vim.opt.termguicolors = true
 
 vim.g.mapleader = ','
 
@@ -58,10 +60,20 @@ require("lazy").setup({
   { "nvim-tree/nvim-web-devicons", lazy = true },
   { 'numToStr/Comment.nvim', opts = {}, lazy = false, },
   { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
+  { 'akinsho/bufferline.nvim', version = "*", dependencies = 'nvim-tree/nvim-web-devicons' },
   'vim-jp/vimdoc-ja',
   'nvim-lualine/lualine.nvim',
   -- 'windwp/nvim-ts-autotag',
 })
+
+-- colorscheme
+--[[
+catppuccin-latte
+catppuccin-frappe
+catppuccin-macchiato
+catppuccin-mocha
+]]
+vim.cmd.colorscheme "catppuccin-latte"
 
 require("nvim-treesitter.configs").setup {
   -- treesitterのthemeをcatppuccinに設定
@@ -81,11 +93,23 @@ require('lualine').setup {
   }
 }
 
--- colorscheme
---[[
-catppuccin-latte
-catppuccin-frappe
-catppuccin-macchiato
-catppuccin-mocha
-]]
-vim.cmd.colorscheme "catppuccin-latte"
+-- bufferline
+-- catppuccinセットアップ後にbufferlineをセットアップする
+local latte = require("catppuccin.palettes").get_palette "latte"
+require("bufferline").setup {
+  highlights = require("catppuccin.groups.integrations.bufferline").get {
+    styles = { "italic", "bold" },
+    custom = {
+      all = {
+        -- fill = { bg = "#000000" },
+      },
+      mocha = {
+        -- background = { fg = mocha.text },
+      },
+      latte = {
+        -- background = { fg = "#000000" },
+        fill = { bg = latte.base },
+      },
+    },
+  },
+}
