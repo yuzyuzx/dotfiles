@@ -5,8 +5,6 @@ export NVM_DIR="$HOME/.nvm"
 # batコマンドのtheme
 export BAT_THEME="Catppuccin-latte"
 
-#alias ls="exa -aF --icons"
-#alias ll="exa -alghB --icons"
 alias ls="ls -a"
 alias ll="ls -l"
 alias nv="nvim"
@@ -20,9 +18,9 @@ HISTFILE=${HOME}/.zsh_history
 # メモリに保存される履歴の件数
 HISTSIZE=1000
 # 履歴ファイルに保存される履歴の件数
-SAVEHIST=100000
+SAVEHIST=10000
 # 重複を記録しない
-#setopt hist_ignore_dups
+setopt hist_ignore_dups
 # 実行時刻記録
 setopt extended_history
 # historyコマンドは履歴に登録しない
