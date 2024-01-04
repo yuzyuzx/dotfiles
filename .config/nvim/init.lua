@@ -82,10 +82,6 @@ require("lazy").setup({
 })
 
 local on_attach = function(client, bufnr)
-  -- LSPサーバーのフォーマット機能を無効にするには下の行をコメントアウト
-  -- 例えばtypescript-language-serverにはコードのフォーマット機能が付いているが代わりにprettierでフォーマットしたいときなど
-  -- client.resolved_capabilities.document_formatting = false
-
   local set = vim.keymap.set
   set("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>")
   set("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>")
@@ -117,8 +113,12 @@ require("mason-lspconfig").setup_handlers {
 }
 
 capabilities = require("cmp_nvim_lsp").default_capabilities()
-
+local cmp_autopairs = require('nvim-autopairs.completion.cmp')
 local cmp = require"cmp"
+cmp.event:on(
+  'confirm_done',
+  cmp_autopairs.on_confirm_done()
+)
 cmp.setup({
   snippet = {
     -- expand = function(args)
@@ -190,3 +190,7 @@ require("bufferline").setup {
   },
 }
 
+require('nvim-autopairs').setup({
+  -- Map the <C-h> key to delete a pair
+  map_c_h = true,
+})
