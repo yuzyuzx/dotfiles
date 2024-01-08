@@ -77,8 +77,18 @@ require("lazy").setup({
   { "numToStr/Comment.nvim", opts = {}, lazy = false, },
   { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
   { "akinsho/bufferline.nvim", version = "*", dependencies = "nvim-tree/nvim-web-devicons" },
-  "vim-jp/vimdoc-ja",
+  {
+    "kylechui/nvim-surround",
+    version = "*", -- Use for stability; omit to use `main` branch for the latest features
+    event = "VeryLazy",
+    config = function()
+      require("nvim-surround").setup({
+        -- Configuration here, or leave empty to use defaults
+      })
+    end
+  },
   "nvim-lualine/lualine.nvim",
+  "vim-jp/vimdoc-ja",
 })
 
 local on_attach = function(client, bufnr)
