@@ -1,0 +1,32 @@
+import = [
+  # "~/.config/alacritty/themes/catppuccin/catppuccin-mocha.toml"
+  # "~/.config/alacritty/themes/catppuccin/catppuccin-macchiato.toml"
+  # "~/.config/alacritty/themes/catppuccin/catppuccin-frappe.toml"
+  "~/.config/alacritty/themes/catppuccin/catppuccin-latte.toml"
+]
+
+[env]
+TERM = "xterm-256color"
+
+[font]
+size = 17
+
+[font.normal]
+family = "SauceCodePro Nerd Font"
+style = "Regular"
+
+[window]
+decorations = "buttonless"
+option_as_alt = "Both"
+
+[window.dimensions]
+columns = 130
+lines = 65
+
+[window.padding]
+x = 4
+y = 2
+
+[window.position]
+x = 1300
+y = 0
