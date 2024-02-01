@@ -17,11 +17,14 @@ vim.opt.hlsearch = true
 vim.opt.showbreak = "↪"
 vim.opt.keywordprg = ":help"
 vim.opt.scrolloff = 3
-vim.opt.clipboard:append{'unnamed'}
+vim.opt.clipboard = 'unnamedplus'
 
 vim.g.mapleader = ','
 
+-- 全選択をする
 vim.keymap.set('n', '<Leader>a', 'ggVG')
+
+-- 検索マッチしたハイライトを消す
 vim.keymap.set('n', '<Leader>q', ':nohlsearch<CR>')
 
 -- 折り返し行の移動
@@ -32,13 +35,17 @@ vim.keymap.set('n', 'k', 'gk')
 vim.keymap.set('n', '<Space>j', '10j')
 vim.keymap.set('n', '<Space><Space>j', '20j')
 vim.keymap.set('n', '<Space>k', '10k')
-vim.keymap.set('n', '<Space><Space>k', '20k')
+vim.keymap.set('n', '<Space><Space>k', '21k')
 
 -- window移動
 vim.keymap.set('n', '<C-J>', '<C-W><C-J>')
 vim.keymap.set('n', '<C-K>', '<C-W><C-K>')
 vim.keymap.set('n', '<C-L>', '<C-W><C-L>')
 vim.keymap.set('n', '<C-H>', '<C-W><C-H>')
+
+-- buffer移動
+vim.keymap.set('n', '<Space>[', ':bprev<CR>')
+vim.keymap.set('n', '<Space>]', ':bnext<CR>')
 
 -- normal modeのまま改行を挿入する
 vim.keymap.set('n', '<Leader>o', 'o<Esc>0"_D')
@@ -49,6 +56,9 @@ vim.keymap.set('i', '<C-p>', '<Up>')
 vim.keymap.set('i', '<C-n>', '<Down>')
 vim.keymap.set('i', '<C-b>', '<Left>')
 vim.keymap.set('i', '<C-f>', '<Right>')
+
+-- 選択範囲をクリップボードにコピーする
+vim.keymap.set('v', '<C-c>', 'y')
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
