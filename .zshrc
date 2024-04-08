@@ -2,13 +2,9 @@ export LANG=ja_JP.UTF-8
 export CLICOLOR=1
 export NVM_DIR="$HOME/.nvm"
 
-# batコマンドのtheme
-export BAT_THEME="Catppuccin-latte"
-
 alias ls="ls -a"
 alias ll="ls -l"
 alias nv="nvim"
-alias view="nvim -R"
 alias man='env LANG=C man'
 alias jman='env LANG=ja_JP.UTF-8 man'
 alias history='history -i -1000'
@@ -33,3 +29,7 @@ setopt IGNOREEOF
 setopt noclobber
 
 eval "$(sheldon source)"
+
+# 時刻表示
+# sheldonより下に定義しないと動作しない
+RPROMPT='%*'
