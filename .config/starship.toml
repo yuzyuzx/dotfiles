@@ -13,6 +13,9 @@ truncation_length = 4
 # Catppuccin 'lavender'
 style = "bold lavender"
 
+[time]
+disabled = false
+
 [nodejs]
 disabled = true
 
