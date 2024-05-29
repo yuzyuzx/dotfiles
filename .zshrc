@@ -29,7 +29,3 @@ setopt IGNOREEOF
 setopt noclobber
 
 eval "$(sheldon source)"
-
-# 時刻表示
-# sheldonより下に定義しないと動作しない
-RPROMPT='%*'
