@@ -78,92 +78,15 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-  -- { "neovim/nvim-lspconfig" },
-  -- { "williamboman/mason.nvim" },
-  -- { "williamboman/mason-lspconfig.nvim" },
-  -- { "hrsh7th/nvim-cmp" },
-  -- { "hrsh7th/cmp-nvim-lsp" },
-  -- { "hrsh7th/cmp-buffer" },
   { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
   { "windwp/nvim-autopairs", event = "InsertEnter", opts = {} },
   { "nvim-tree/nvim-web-devicons", lazy = true },
   { "numToStr/Comment.nvim", opts = {}, lazy = false, },
   { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
   { "akinsho/bufferline.nvim", version = "*", dependencies = "nvim-tree/nvim-web-devicons" },
-  -- {
-  --   "kylechui/nvim-surround",
-  --   version = "*", -- Use for stability; omit to use `main` branch for the latest features
-  --   event = "VeryLazy",
-  --   config = function()
-  --     require("nvim-surround").setup({
-  --       -- Configuration here, or leave empty to use defaults
-  --     })
-  --   end
-  -- },
   "nvim-lualine/lualine.nvim",
   "vim-jp/vimdoc-ja",
 })
-
--- local on_attach = function(client, bufnr)
---   local set = vim.keymap.set
---   set("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>")
---   set("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>")
---   set("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>")
---   set("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>")
---   -- set("n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>")
---   set("n", "<space>wa", "<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>")
---   set("n", "<space>wr", "<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>")
---   set("n", "<space>wl", "<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>")
---   set("n", "<space>D", "<cmd>lua vim.lsp.buf.type_definition()<CR>")
---   set("n", "<space>rn", "<cmd>lua vim.lsp.buf.rename()<CR>")
---   set("n", "<space>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>")
---   set("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>")
---   set("n", "<space>e", "<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>")
---   set("n", "[d", "<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>")
---   set("n", "]d", "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>")
---   set("n", "<space>q", "<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>")
---   set("n", "<space>f", "<cmd>lua vim.lsp.buf.formatting()<CR>")
--- end
-
--- require("mason").setup()
--- require("mason-lspconfig").setup()
--- require("mason-lspconfig").setup_handlers {
---   function (server_name)
---     require("lspconfig")[server_name].setup {
---       on_attach = on_attach
---     }
---   end,
--- }
-
--- capabilities = require("cmp_nvim_lsp").default_capabilities()
--- local cmp_autopairs = require('nvim-autopairs.completion.cmp')
--- local cmp = require"cmp"
--- cmp.event:on(
---   'confirm_done',
---   cmp_autopairs.on_confirm_done()
--- )
--- cmp.setup({
---   snippet = {
---     -- expand = function(args)
---     --   require("luasnip").lsp_expand(args.body)
---     -- end,
---   },
---   mapping = cmp.mapping.preset.insert({
---     ["<C-p>"] = cmp.mapping.select_prev_item(),
---     ["<C-n>"] = cmp.mapping.select_next_item(),
---     ["<C-d>"] = cmp.mapping.scroll_docs(-4),
---     ["<C-f>"] = cmp.mapping.scroll_docs(4),
---     ["<C-Space>"] = cmp.mapping.complete(),
---     ["<C-e>"] = cmp.mapping.close(),
---     ["<CR>"] = cmp.mapping.confirm({ select = true }),
---   }),
---   sources = cmp.config.sources({
---     { name = "nvim_lsp" },
---     -- { name = "luasnip" },
---   }, {
---     -- { name = "buffer" },
---   })
--- })
 
 -- colorscheme
 --[[
@@ -218,22 +141,3 @@ require('nvim-autopairs').setup({
   map_c_h = true,
 })
 
--- swift lsp
--- https://chrishannah.me/using-a-swift-lsp-in-neovim
--- local swift_lsp = vim.api.nvim_create_augroup("swift_lsp", { clear = true })
--- vim.api.nvim_create_autocmd("FileType", {
---   pattern = { "swift" },
---   callback = function()
---     local root_dir = vim.fs.dirname(vim.fs.find({
---       "Package.swift",
---       ".git",
---     }, { upward = true })[1])
---     local client = vim.lsp.start({
---       name = "sourcekit-lsp",
---       cmd = { "sourcekit-lsp" },
---       root_dir = root_dir,
---     })
---     vim.lsp.buf_attach_client(0, client)
---   end,
---   group = swift_lsp,
--- })
