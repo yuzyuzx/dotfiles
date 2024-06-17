@@ -1,0 +1,21 @@
+import = [
+  "~/dotfiles/.config/alacritty/catppuccin-latte.toml"
+]
+
+[env]
+TERM = "xterm-256color"
+
+[window]
+# startup_mode = "Fullscreen"
+dimensions = { columns = 100, lines = 100 }
+position = { x = 0, y = 0}
+padding = { x = 10, y = 10 }
+dynamic_padding = true
+opacity = 1.0
+decorations = "Buttonless"
+
+[font]
+size = 16.0
+# Ricty, 0xProto, Cica, HackGen
+normal = { family = "Menlo", style = "Regular" }
+offset = { x = 1, y = 1 }
