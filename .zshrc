@@ -8,6 +8,7 @@ alias nv="nvim"
 alias man='env LANG=C man'
 alias jman='env LANG=ja_JP.UTF-8 man'
 alias history='history -i -1000'
+alias sail="./vendor/bin/sail"
 
 # 履歴ファイルの保存先
 HISTFILE=${HOME}/.zsh_history
