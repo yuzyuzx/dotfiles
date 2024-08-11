@@ -2,13 +2,19 @@ export LANG=ja_JP.UTF-8
 export CLICOLOR=1
 export NVM_DIR="$HOME/.nvm"
 
-alias ls="ls -a"
-alias ll="ls -l"
-alias nv="nvim"
 alias man='env LANG=C man'
 alias jman='env LANG=ja_JP.UTF-8 man'
 alias history='history -i -1000'
-alias sail="./vendor/bin/sail"
+
+# コマンドalias
+alias ls="ls -a"
+alias ll="ls -l"
+alias nv="nvim"
+alias dcr="docker container run"
+alias dcl="docker container ls -a"
+alias dil="docker image ls"
+alias dvl="docker volume ls"
+alias dnl="docker netowork ls"
 
 # 履歴ファイルの保存先
 HISTFILE=${HOME}/.zsh_history
