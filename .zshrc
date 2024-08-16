@@ -1,6 +1,6 @@
 export LANG=ja_JP.UTF-8
 export CLICOLOR=1
-export NVM_DIR="$HOME/.nvm"
+#export NVM_DIR="$HOME/.nvm"
 
 alias man='env LANG=C man'
 alias jman='env LANG=ja_JP.UTF-8 man'
