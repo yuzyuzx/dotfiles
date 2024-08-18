@@ -1,3 +1,7 @@
+# 先頭に記述する
+# abbrなどzshrcで使用するプラグインが反映しないため
+eval "$(sheldon source)"
+
 export LANG=ja_JP.UTF-8
 export CLICOLOR=1
 #export NVM_DIR="$HOME/.nvm"
@@ -5,16 +9,15 @@ export CLICOLOR=1
 alias man='env LANG=C man'
 alias jman='env LANG=ja_JP.UTF-8 man'
 alias history='history -i -1000'
-
-# コマンドalias
 alias ls="ls -a"
 alias ll="ls -l"
-alias nv="nvim"
-alias dcr="docker container run"
-alias dcl="docker container ls -a"
-alias dil="docker image ls"
-alias dvl="docker volume ls"
-alias dnl="docker netowork ls"
+
+abbr -S nv="nvim" >>/dev/null
+abbr -S dcr="docker container run" >>/dev/null
+abbr -S dcl="docker container ls -a" >>/dev/null >>/dev/null
+abbr -S dil="docker image ls" >>/dev/null
+abbr -S dvl="docker volume ls" >>/dev/null
+abbr -S dnl="docker netowork ls" >>/dev/null
 
 # 履歴ファイルの保存先
 HISTFILE=${HOME}/.zsh_history
@@ -34,5 +37,3 @@ setopt share_history
 setopt IGNOREEOF
 # リダイレクトの上書きをエラーにする
 setopt noclobber
-
-eval "$(sheldon source)"
