@@ -6,8 +6,9 @@ local mux = wezterm.mux
 config.initial_rows = 80
 config.initial_cols = 120
 
-config.font = wezterm.font 'Hack Nerd Font'
-config.font_size = 15.0
+-- config.font = wezterm.font 'Hack Nerd Font'
+config.font = wezterm.font 'Source Han Code JP'
+config.font_size = 14.0
 
 -- タイトルバー設定
 -- https://wezfurlong.org/wezterm/config/lua/config/window_decorations.html
