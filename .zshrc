@@ -37,3 +37,8 @@ setopt share_history
 setopt IGNOREEOF
 # リダイレクトの上書きをエラーにする
 setopt noclobber
+
+# zsh-completionの設定
+autoload -Uz compinit
+compinit
+
