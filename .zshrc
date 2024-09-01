@@ -6,6 +6,10 @@ export LANG=ja_JP.UTF-8
 export CLICOLOR=1
 #export NVM_DIR="$HOME/.nvm"
 
+# java setting
+export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+export CPPFLAGS="-I/opt/homebrew/opt/openjdk/include"
+
 alias man='env LANG=C man'
 alias jman='env LANG=ja_JP.UTF-8 man'
 alias history='history -i -1000'
