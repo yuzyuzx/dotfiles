@@ -122,7 +122,7 @@ end)
 vim.opt.breakindent = true
 
 -- Save undo history
-vim.opt.undofile = true
+-- vim.opt.undofile = true
 
 -- Case-insensitive searching UNLESS \C or one or more capital letters in the search term
 vim.opt.ignorecase = true
@@ -829,7 +829,6 @@ require('lazy').setup({
     -- change the command in the config to whatever the name of that colorscheme is.
     --
     -- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
-    -- 'folke/tokyonight.nvim',
     'catppuccin/nvim',
     priority = 1000, -- Make sure to load this before all the other start plugins.
     init = function()
@@ -840,7 +839,7 @@ require('lazy').setup({
       vim.cmd.colorscheme 'catppuccin-latte'
 
       -- You can configure highlights by doing something like:
-      vim.cmd.hi 'Comment gui=none'
+      --vim.cmd.hi 'Comment gui=none'
     end,
   },
 
@@ -953,11 +952,11 @@ require('lazy').setup({
   },
   { 'numToStr/Comment.nvim', opts = {}, lazy = false },
   { 'windwp/nvim-autopairs', event = 'InsertEnter', opts = {} },
+  'vim-jp/vimdoc-ja',
 
   -- The following two comments only work if you have downloaded the kickstart repo, not just copy pasted the
   -- init.lua. If you want these files, they are in the repository, so you can just download them and
   -- place them in the correct locations.
-
   -- NOTE: Next step on your Neovim journey: Add/Configure additional plugins for Kickstart
   --
   --  Here are some example plugins that I've included in the Kickstart repository.
