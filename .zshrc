@@ -6,6 +6,8 @@ export LANG=ja_JP.UTF-8
 export CLICOLOR=1
 #export NVM_DIR="$HOME/.nvm"
 
+alias tnv="NVIM_APPNAME=nvim-test nvim"
+
 # java setting
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 export CPPFLAGS="-I/opt/homebrew/opt/openjdk/include"
