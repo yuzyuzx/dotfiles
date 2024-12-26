@@ -53,4 +53,5 @@ wezterm.plugin.require("https://github.com/nekowinston/wezterm-bar").apply_to_co
 	},
 })
 
+
 return config
